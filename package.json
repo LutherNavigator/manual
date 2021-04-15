@@ -1,0 +1,22 @@
+{
+  "name": "manual",
+  "version": "0.1.0",
+  "description": "Manual for LutherNavigator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LutherNavigator/manual.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LutherNavigator/manual/issues"
+  },
+  "homepage": "https://github.com/LutherNavigator/manual#readme",
+  "dependencies": {
+    "remarkable": "^2.0.1"
+  }
+}
