@@ -1,0 +1,5 @@
+# Other
+.vscode
+*.DS_Store
+.env
+todo.txt
