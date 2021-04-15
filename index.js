@@ -41,6 +41,35 @@ function sendMarkdown(res, urlPath, callback) {
   });
 }
 
+function sendHTML(res, urlPath, callback) {
+  fs.readFile(path.join(__dirname, staticDir, mainHTML), (err, htmlData) => {
+    if (err) {
+      callback(err);
+    } else {
+      fs.readFile(
+        path.join(__dirname, staticDir, urlPath + ".html"),
+        (err, thisHTMLData) => {
+          if (err) {
+            callback(err);
+          } else {
+            const data = htmlData
+              .toString()
+              .replace("{}", thisHTMLData.toString());
+            res.writeHeader(200, { "Content-Type": "text/html" });
+            res.write(data, (writeErr) => {
+              if (writeErr) {
+                callback(writeErr);
+              } else {
+                callback(null);
+              }
+            });
+          }
+        }
+      );
+    }
+  });
+}
+
 function sendStatic(res, urlPath, callback) {
   fs.readFile(path.join(__dirname, staticDir, urlPath), (err, data) => {
     if (err) {
@@ -84,7 +113,12 @@ const server = http.createServer((req, res) => {
     res.end();
   } else {
     // 404
-    res.end();
+    sendHTML(res, "404", (err) => {
+      if (err) {
+        console.error(err);
+      }
+      res.end();
+    });
   }
 });
 

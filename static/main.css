@@ -36,3 +36,11 @@ main {
 #content p {
   text-align: justify;
 }
+
+.center {
+  text-align: center !important;
+}
+
+.btn-light {
+  background-color: #e8e9ea;
+}
