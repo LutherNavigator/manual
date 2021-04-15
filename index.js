@@ -25,9 +25,7 @@ function sendMarkdown(res, urlPath, callback) {
             callback(err);
           } else {
             const markdownAsHTML = md.render(markdownData.toString());
-            const data = htmlData
-              .toString()
-              .replace("{{{ body }}}", markdownAsHTML);
+            const data = htmlData.toString().replace("{}", markdownAsHTML);
             res.writeHeader(200, { "Content-Type": "text/html" });
             res.write(data, (writeErr) => {
               if (writeErr) {
@@ -82,7 +80,6 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/") {
     res.writeHead(302, {
       Location: homeRedirect,
-      //add other headers here...
     });
     res.end();
   } else {
