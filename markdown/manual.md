@@ -2,13 +2,13 @@
 
 This manual contains a series of documents describing the layout of the LutherNavigator site to admins and developers.
 
-## Admin Manual
+## [Admin Manual](/admin)
 
-The site features a [control panel](https://www.luthernavigator.com/admin) exclusive to admins. Information on how to use each section of the admin control panel and other similar features can be found [here](/admin).
+The site features a [control panel](https://www.luthernavigator.com/admin) exclusive to admins. The admin manual contains information on how to use each section of the admin control panel and other similar features.
 
-## Developer Manual
+## [Developer Manual](/developer)
 
-Documentation for all things relevant to developers is quite a bit more extensive. It includes detailed descriptions of everything from the project architecture to how deployment is set up to how to extend the application. It can be found [here](/developer).
+Documentation for all things relevant to developers is quite a bit more extensive. It includes detailed descriptions of everything from the project architecture to how deployment is set up to how to extend the application.
 
 ## User Manual
 
