@@ -33,6 +33,10 @@ main {
   max-width: 800px;
 }
 
+#content h1 {
+  text-align: center;
+}
+
 #content p {
   text-align: justify;
 }

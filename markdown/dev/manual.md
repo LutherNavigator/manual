@@ -9,7 +9,7 @@ Relevant links:
 
 ## How the Manual Works
 
-The manual is run using a very basic HTTP server in `/index.js`. In order to ensure that the application can start up quickly, we have significantly limited our dependencies. The only NPM package we are using is [remarkable](https://www.npmjs.com/package/remarkable), which we use to compile Markdown to HTML. `/index.js` will treat `/static/main.html` as a template, replacing the `{}` characters with the compiled HTML of the requested Markdown page. If the requested URL does not correspond to a Markdown page, the application will check the `/static` directory to see if the requested resource exists there. In the event that no resource is found for a URL, `/static/main.html` is rendered with `/static/404.html`.
+The manual is run using a very basic HTTP server in `/index.js`. In order to ensure that the application can start up quickly, we have significantly limited our dependencies. The only NPM package we are using is [remarkable](https://www.npmjs.com/package/remarkable), which we use to compile Markdown to HTML. `/index.js` will treat `/static/main.html` as a template, replacing the `{}` characters with the compiled HTML of the requested Markdown page. If the requested URL does not correspond to a Markdown page, the application will check the `/static` directory to see if the requested resource exists there. In the event that no resource is found for a URL, `/static/main.html` is rendered with `/static/404.html`. The only exception to this is if `/` is requested, in which case the request is rerouted to `/manual`.
 
 ## Extending with Markdown
 
