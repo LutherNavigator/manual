@@ -1,1 +1,28 @@
 # Admin Manual
+
+The control panel allows admins to monitor and control various parts of the site. We advise that the control panel be used in a desktop environment, rather than on a mobile device.
+
+## Admin Control Panel
+
+### Statistics
+
+The stats page shows the number of total users, posts, user sessions, and suspended users in the database. Each user session is equivalent to one user logged in on one device.
+
+Like several of the other subpages within the control panel, there is a refresh button which updates all data on the subpage.
+
+Below the statistics section is a list of all users and all posts in the database. There is an option to delete user accounts and user posts, which should only be used in extreme cases. Once deleted, accounts and posts _cannot_ be recovered, so please be certain. Upon deleting an account or post, admins are prompted for a reason for the deletion, which will be sent in an email to the user or post creator. The posts section of the page also allows admins to favorite posts, which will show up in the CGL favorites area of the site.
+
+### Variables
+
+The variables page contains a list of values stored within the database. These values should only be changed by those who fully understand the purpose of the variable. Each variable's purpose is listed below:
+
+- **Google Analytics ID**: permits the monitoring of traffic through the site.
+- **Images per post**: the upper limit on the number of images per post.
+- **Nav message**: the message displayed when clicking on the logo in the navbar.
+- **Password reset age**: the amount of time in seconds before password reset requests expire.
+- **Salt rounds**: the number of salt rounds to use when hashing user passwords (ask a developer).
+- **Session age**: the amount of time in seconds before sessions expire.
+- **Verify age**: the amount of time in seconds before account verification requests expire.
+- **Version**: the site version.
+
+There is also an option to reset each of the variables to their original values.
