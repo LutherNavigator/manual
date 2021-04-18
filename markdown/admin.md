@@ -8,9 +8,9 @@ The control panel allows admins to monitor and control various parts of the site
 
 The stats page shows the number of total users, posts, user sessions, and suspended users in the database. Each user session is equivalent to one user logged in on one device.
 
-Like several of the other subpages within the control panel, there is a refresh button which updates all data on the subpage.
+Like several of the other subpages within the control panel, there is a refresh button which updates all data on the subpage. The pages are also set up to automatically update every minute.
 
-Below the statistics section is a list of all users and all posts in the database. There is an option to delete user accounts and user posts, which should only be used in extreme cases. Once deleted, accounts and posts _cannot_ be recovered, so please be certain. Upon deleting an account or post, admins are prompted for a reason for the deletion, which will be sent in an email to the user or post creator. The posts section of the page also allows admins to favorite posts, which will show up in the CGL favorites area of the site.
+Below the statistics section is a list of all users and all posts in the database. There is an option to delete user accounts and user posts, which should only be used in extreme cases. Once deleted, accounts and posts _cannot_ be recovered, so please be certain. Deleting a user's account will cause all of their posts to be removed as well. Upon deleting an account or post, admins are prompted for a reason for the deletion, which will be sent in an email to the user or post creator. The posts section of the page also allows admins to favorite posts, which will show up in the CGL favorites area of the site.
 
 ### Variables
 
@@ -26,3 +26,11 @@ The variables page contains a list of values stored within the database. These v
 - **Version**: the site version.
 
 There is also an option to reset each of the variables to their original values.
+
+### Registration Approval
+
+Upon creating an account, users will receive an email containing a link to verify their account. Once verified, they will wait for their account to be approved by an admin. On the registration approval page, admins will see a list of users who are waiting to be verified. Admins should check the details shown to confirm that the user has entered valid information. There are buttons provided which permit admins to approve or deny each account. In either case, an email will be sent to the user alerting them about their account. If an account is denied, admins will be prompted for a reason, which will be sent in the email.
+
+### Post Approval
+
+After creating a post, users will notice that the only people who can view the post are themselves and admins. This will continue to be the case until the post has been approved by an admin. The process for reviewing posts is essentially the same as the process for reviewing user accounts. The page provides several pieces of information about each post, but admins should view the post itself. The first field shown is the post ID, which, for convenience, is also a link to the post. Like with account verification, an email will be sent to the post creator, and a reason will be requested if the post is not approved.
