@@ -34,3 +34,15 @@ Upon creating an account, users will receive an email containing a link to verif
 ### Post Approval
 
 After creating a post, users will notice that the only people who can view the post are themselves and admins. This will continue to be the case until the post has been approved by an admin. The process for reviewing posts is essentially the same as the process for reviewing user accounts. The page provides several pieces of information about each post, but admins should view the post itself. The first field shown is the post ID, which, for convenience, is also a link to the post. Like with account verification, an email will be sent to the post creator, and a reason will be requested if the post is not approved.
+
+### Programs
+
+The programs page is where admins can add, rename, and remove programs. Once a program is associated with any posts, the program cannot be deleted. Please note that renaming a program will cause all posts associated with the program to reflect this name change.
+
+### User Status Change
+
+Although uncommon, it is possible that users need to change their status. An example of this would be a graduating seinor who needs to change their user status from "Student" to "Alum". The user would request a status change via their profile and await admin approval. Admins can view the status change request and determine if the change would be appropriate. In either case, an email will be sent to the user who requested the change in status. Once again, admins will be prompted for a reason in the event that they deny the request.
+
+### Account Suspension
+
+The suspension page lets admins suspend user accounts. When suspended, users will immediately be logged out and will not be able to log back in for the duration of the suspension. To suspend a user, an admin must find the ID of the user, which can be done by searching the stats page and noting the ID of the user. The ID can be put in the user ID box, and a suspension duration must be selected. Once suspended, the user will show up in the table below. Admins are able to end a user's suspension early. Users will be notified via email that their account has been suspended and the duration of the suspension.
