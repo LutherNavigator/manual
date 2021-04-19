@@ -9,3 +9,7 @@ This manual should only need to be changed when significant changes are made to 
 ## [Scripts](/dev/scripts)
 
 The project repository contains a number of Python scripts which serve various purposes.
+
+## [Deployment](/dev/deployment)
+
+The application is deployed to [Heroku](https://heroku.com/). We do not assume devs are familiar with Heroku, but experience with it will certainly speed things up.
