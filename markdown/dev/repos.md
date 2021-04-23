@@ -56,3 +56,7 @@ $ heroku local web
 All of our backend, specifically the service layer, is documented using comments for every function, class, interface, and top-level variable. We are using the NPM package [TypeDoc](https://www.npmjs.com/package/typedoc) to compile these comments into a series of HTML pages. The idea is that developers can check the purpose and usage of any class, interface, etc. when needed. We have configured the main application to recompile the documentation when changes are pushed to the main repository, and push the updated documentation to [the docs repository](https://github.com/LutherNavigator/docs). The docs are deployed using GitHub pages at [luthernavigator.github.io/docs](https://luthernavigator.github.io/docs/). If all works as intended, developers should not need to interact with this repository or the code within it.
 
 We expect developers to properly document code they write which extends any part of the backend. Information about comment format can be found [here](https://typedoc.org/guides/doccomments/). Further information can be found on [the TypeDoc website](https://typedoc.org/) or [the TypeDoc GitHub page](https://github.com/TypeStrong/TypeDoc).
+
+## Manual
+
+This manual should only need to be changed when significant changes are made to the application. In the event that a change to the Luther Navigator project causes the manual to be inaccurate or incomplete in any way, the manual should be appropriately updated. The process for extending the manual is explained on [another page](/dev/manual).
