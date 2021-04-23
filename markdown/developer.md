@@ -13,3 +13,7 @@ The project repository contains a number of Python scripts which serve various p
 ## [Deployment](/dev/deployment)
 
 The application is deployed to [Heroku](https://heroku.com/). We do not assume devs are familiar with Heroku, but experience with it will certainly speed things up.
+
+## [GitHub](/dev/github)
+
+We have [an organization](https://github.com/LutherNavigator) for all of our repositories on GitHub, including one for [the project itself](https://github.com/LutherNavigator/LutherNavigator).
