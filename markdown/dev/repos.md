@@ -1,4 +1,4 @@
-# GitHub
+# Repositories
 
 We have [an organization](https://github.com/LutherNavigator) for all of our repositories on GitHub, including one for [the project itself](https://github.com/LutherNavigator/LutherNavigator).
 
