@@ -2,6 +2,16 @@
   font-family: "Comfortaa", "Roboto", sans-serif;
 }
 
+pre code {
+  border-radius: 5px;
+}
+
+code,
+code * {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
 /* spinning logos */
 @keyframes spinning {
   from {

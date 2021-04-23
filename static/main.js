@@ -6,4 +6,7 @@ window.addEventListener("load", () => {
       link.setAttribute("target", "_blank");
     }
   }
+
+  // Highlight code chunks
+  hljs.highlightAll();
 });
