@@ -2,9 +2,9 @@
 
 We have [an organization](https://github.com/LutherNavigator) for all of our repositories on GitHub, including one for [the project itself](https://github.com/LutherNavigator/LutherNavigator).
 
-## The Main Project
+## LutherNavigator
 
-The main project is called LutherNavigator. It contains the code that runs the application hosted at [luthernavigator.com](https://www.luthernavigator.com/).
+The main project, called LutherNavigator, contains the code that runs the application hosted at [luthernavigator.com](https://www.luthernavigator.com/).
 
 ### Getting Access to the Repository
 
