@@ -57,6 +57,12 @@ All of our backend, specifically the service layer, is documented using comments
 
 We expect developers to properly document code they write which extends any part of the backend. Information about comment format can be found [here](https://typedoc.org/guides/doccomments/). Further information can be found on [the TypeDoc website](https://typedoc.org/) or [the TypeDoc GitHub page](https://github.com/TypeStrong/TypeDoc).
 
+## Coverage
+
+We are testing our service layer in full using [Jest](https://jestjs.io/). These tests are located in `/test/services`, and they test every method of every service class. We have also set Jest up to generate a code coverage report, which is useful in showing exactly which lines of code we are hitting using our tests. Like with the docs, our code coverage report will be automatically regenerated when changes are pushed to the main repository. The new coverage report will be pushed to [the coverage repository](https://github.com/LutherNavigator/coverage), and is deployed using GitHub pages at [luthernavigator.github.io/coverage](https://luthernavigator.github.io/coverage/). If all works as intended, developers should not need to interact with this repository or the code within it.
+
+We realize that there are a few lines in the service layer which we are not reaching in our tests. There is a good reason for this. Each of the lines we are not testing are lines which start asynchronous tasks in the background. Specifically, these lines call functions that eventually call the JavaScript `setTimeout` function, which we use to prune records from the database after a certain period of time. The `setTimeout` function is what begins these asynchronous background tasks. If there are any asynchronous tasks still running when our tests finish, Jest will not exit correctly. So we cannot test these lines that start asynchronous tasks.
+
 ## Manual
 
 This manual should only need to be changed when significant changes are made to the application. In the event that a change to the Luther Navigator project causes the manual to be inaccurate or incomplete in any way, the manual should be appropriately updated. The process for extending the manual is explained on [another page](/dev/manual).
