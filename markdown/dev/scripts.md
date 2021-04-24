@@ -58,7 +58,7 @@ $ python3 scripts/test.py --backend
 
 ### Emulation Testing
 
-Running the script in emulation mode will test the frontend on several browsers and across a variety of devices. Screenshots of each page tested per browser per device will be generated and saved to `/screenshots`. Emulation tests can be run using the command:
+Running the script in emulation mode will test the frontend on several browsers and across a variety of devices using the tests in `/test/ui`. Screenshots of each page tested per browser per device will be generated and saved to `/screenshots`. Emulation tests can be run using the command:
 
 ```console
 $ python3 scripts/test.py --emulation
