@@ -32,3 +32,39 @@ test("<testName>", async () => {
 ```
 
 For information on how to use Jest, read [the Jest docs](https://jestjs.io/docs/getting-started). The file `/test/services/util.ts` contains useful functions which can be used when testing. Developers are welcome to add to this file if needed. Developers are expected to check the coverage reports to ensure they are covering all testable functions, lines, and statements.
+
+## Project Structure
+
+The main part of the project, contained within the `src` directory, is organized into four layers: the views, the routing layer, the service layer, and the database. Somewhat independent of these layers are the files at the top-level of `/src`.
+
+### Top-Level Files
+
+`index.ts` is the entry point of the application. It configures the [Express](https://www.npmjs.com/package/express) server, the [Express Handlebars](https://www.npmjs.com/package/express-handlebars) view engine, configures routing, initializes the database, and finally starts the webserver.
+
+`routes.ts` exports all routes from the `/src/routes` directory, which are used in `index.ts` to configure routing.
+
+`services.ts` exports a class containing every available database service, and the ability to execute queries directly.
+
+`dbinit.ts` contains the SQL code that initializes the database and all tables within it. In the event that developers need to make modifications to the database schema, this is the file where they would do so.
+
+`db.ts` provides a wrapper around [the mysql NPM package](https://www.npmjs.com/package/mysql), making it easier to execute queries asynchronously.
+
+`emailer.ts` contains functions which allow for sending emails. The `/src/emails` directory houses a series of text and HTML files which contain the content that will be sent to users via email. For each email that needs to be sent, we send both the text and HTML versions of the email so that if the user's email client supports HTML (which it should, given that this is the 21st century), that is what will be displayed. If HTML is not supported, it will simply display the text version of the email. The `sendFormattedEmail` function supports the use of named placeholders within the email body. See the function documentation for further details.
+
+`asyncCatch.ts` exports a function which wraps an asynchronous function in a try/catch block. It is imperative that developers use this function when configuring routing, as Express does not have a way of catching errors that occur within asynchronous routes.
+
+`config.ts` contains default values for the `Meta` database table.
+
+`proxy.ts` exports a function which will essentially reroute a request to a different URL.
+
+`helpers.ts` contains useful helper functions that can be used in the view layer.
+
+### View Layer
+
+The view layer is kept within the `/src/views` and `/src/static` directories. The views directory houses all HTML files used in the view layer. There are two subdirectories as well, both of which are necessary for our view engine, [Express Handlebars](https://www.npmjs.com/package/express-handlebars). `/src/views/layouts` has the one and only layout. Our view engine is configured to use `/src/views/layouts/default.html` as a template, and render the specified view (one of the HTML files within the views directory) in place of `{{{body}}}`. `/src/views/partials` contains partial templates, of which we have only the one we use for each page of the admin control panel. For information on the syntax Express Handlebars supports, see [the NPM page](https://www.npmjs.com/package/express-handlebars) or [the GitHub repo](https://github.com/express-handlebars/express-handlebars). The `/src/static` directory is served statically. As an example, `/src/static/css/main.css` is served as `/css/main.css`, and in a view you could link it like so:
+
+```html
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+```
+
+Our CSS and JavaScript are in their respective subdirectories within `/src/static`. Both `main.css` and `main.js` are included in every page on the site. The remaining files are exclusive to the pages they are associated with.
