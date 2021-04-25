@@ -87,7 +87,7 @@ function sendStatic(res, urlPath, callback) {
 }
 
 const server = http.createServer((req, res) => {
-  const urlPath = req.url.slice(1);
+  const urlPath = req.url.slice(1).split("?")[0];
 
   if (fs.existsSync(path.join(__dirname, markdownDir, urlPath + ".md"))) {
     sendMarkdown(res, urlPath, (err) => {
@@ -106,7 +106,7 @@ const server = http.createServer((req, res) => {
       }
       res.end();
     });
-  } else if (req.url === "/") {
+  } else if (req.url.split("?")[0] === "/") {
     res.writeHead(302, {
       Location: homeRedirect,
     });
