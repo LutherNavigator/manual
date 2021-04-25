@@ -119,3 +119,52 @@ The new route can be used in `/src/index.ts`:
 ```ts
 app.use("/<path>", routes.routeNameRouter);
 ```
+
+Developers are strongly encouraged to look at other files in the routing directory in order to best follow the development patterns we have established in the application.
+
+### Service Layer
+
+The service layer deals with interaction with the database, and is kept within the `/src/services` directory. Each TypeScript file in this directory loosely corresponds to one table in the database. Each file contains a class which inherits from the `BaseService` class in `/src/services/util.ts`. The format for a service is as follows:
+
+```ts
+/**
+ * Services for <serviceName>.
+ * @packageDocumentation
+ */
+
+import { BaseService } from "./util";
+
+/**
+ * <serviceName> architecture.
+ */
+export interface ServiceName {
+  id: number;
+  name: string;
+}
+
+/**
+ * <serviceName> services.
+ */
+export class ServiceNameService extends BaseService {
+  /**
+   * Documentation goes here.
+   */
+  public async someService(): Promise<ServiceName[]> {
+    const sql = `SOME SQL CODE`;
+    const params = [];
+    const rows: ServiceName[] = await this.dbm.execute(sql, params);
+
+    return rows;
+  }
+}
+```
+
+We encourage developers to use [TypeDoc](https://typedoc.org/) documentation syntax to document new classes, functions/methods, interfaces, etc. See [the repos page](/dev/repos) for more information on TypeDoc.
+
+Any new services must be added in `/src/services.ts`. This includes importing the new service class, defining it as a readonly property of the `DatabaseManager` class, and initializing it in the constructor. When adding new services, developers should _always_ write tests for the new services to ensure everything executes as intended.
+
+Developers are strongly encouraged to look at other files in the services directory in order to best follow the development patterns we have established in the application.
+
+### Database Layer
+
+The MySQL database, as stated earlier, is initialized in `/src/dbinit.ts` and accessed via the service layer. In the event that developers need to interact directly with the database, they can do so using the database script. See [the scripts page](/dev/scripts) for more details.
