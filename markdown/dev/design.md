@@ -6,6 +6,8 @@
 
 There are several important files in the root directory. The `.gitattributes` informs Git to ignore the local docs and coverage report in language statistics. The `Procfile` is what tells Heroku how to start the application. `jest.config.ts` contains the configuration information for Jest, where we specify where tests are (`testMatch`), what to do before running the tests (`globalSetup`), in what way to generate coverage reports, etc. `package.json` and `package-lock.json` are important for NPM, and, in most cases, should not be modified directly. `requirements.txt` is for Python's package manager, [pip](https://pypi.org/project/pip/), and contains information about each of the packages required to run [our scripts](/dev/scripts). The root `tsconfig.json` is there as a placeholder. The remaining files should be self-explanatory.
 
+One file in the root of the project that does not show up on GitHub is the `.env` file. It contains the contents of the config variables found in the app settings. The application cannot run without this file. It is extremely important that the contents of this file be kept hidden, which is why the file is not stored in the remote repository. The file can be acquired from Jon Lund.
+
 ## Top-Level Miscellaneous
 
 The `coverage` directory contains a copy of the generated coverage report. See more about our coverage reports [here](/dev/repos). The `screenshots` directory, if it exists, will contain screenshots of various pages of the site taken from different browsers across many emulated devices. See more about our emulation testing [here](/dev/repos). The `node_modules` directory is created and managed by NPM, and contains all project dependencies. Developers should never need to interact with this directory directly.

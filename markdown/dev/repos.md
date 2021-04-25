@@ -28,6 +28,14 @@ GitHub Actions has been configured for the repo. This means that our automated b
 
 Issues, pull requests, projects, etc. are fairly self-explanatory, so we will not bother explaining them here. We expect developers to use these when necessary.
 
+### Running Locally
+
+Like with all of our repos that deploy to Heroku, this application can be run locally with the command:
+
+```console
+$ heroku local web
+```
+
 ## Error Pages
 
 The [error pages repository](https://github.com/LutherNavigator/error-pages) contains the code for the pages that will be displayed in the event of an error or site maintenance. The Heroku project is configured to display the page hosted at [`/error`](https://luther-navigator-error-pages.herokuapp.com/error) of the error page deployment when an uncaught error occurs in the main application. Heroku has an option to enable site maintenance, at which point it will display the page hosted at [`/maintenance`](https://luther-navigator-error-pages.herokuapp.com/maintenance).
@@ -41,14 +49,6 @@ Changes can be made to the existing HTML pages and CSS styling. In order to add 
 ```html
 <link rel="stylesheet" type="text/css" href="/style.css" />
 <script type="text/javascript" src="/script.js"></script>
-```
-
-### Running Locally
-
-Like with all of our repos that deploy to Heroku, this application can be run locally with the command:
-
-```console
-$ heroku local web
 ```
 
 ## Docs
