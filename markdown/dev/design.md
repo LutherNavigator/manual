@@ -68,3 +68,54 @@ The view layer is kept within the `/src/views` and `/src/static` directories. Th
 ```
 
 Our CSS and JavaScript are in their respective subdirectories within `/src/static`. Both `main.css` and `main.js` are included in every page on the site. The remaining files are exclusive to the pages they are associated with.
+
+### Routing Layer
+
+The routing layer is kept within the `/src/routes` directory. Each TypeScript file in this directory represents one set of subpages in the application. The format for a route is as follows:
+
+```ts
+/**
+ * <routeName> routes.
+ * @packageDocumentation
+ */
+
+import { Router } from "express";
+import { renderPage } from "./util";
+import wrapRoute from "../asyncCatch";
+// Other imports
+
+/**
+ * The <routeName> router.
+ */
+export const routeNameRouter = Router();
+
+// A page
+routeNameRouter.get(
+  "/",
+  wrapRoute(async (req, res) => {
+    await renderPage(req, res, "<viewName>");
+  })
+);
+
+// Another page
+routeNameRouter.get(
+  "/other",
+  wrapRoute(async (req, res) => {
+    await renderPage(req, res, "<otherViewName>");
+  })
+);
+
+// Other pages
+```
+
+The `wrapRoute` function must be used in order to ensure any errors that occur within the following block of code will be caught and handle appropriately. Additionally, the new router object, called `routeNameRouter` above, will need to be exported from `/src/routes.ts`:
+
+```ts
+export * from "./routes/<routeName>";
+```
+
+The new route can be used in `/src/index.ts`:
+
+```ts
+app.use("/<path>", routes.routeNameRouter);
+```
