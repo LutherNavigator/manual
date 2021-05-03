@@ -1,6 +1,6 @@
 # Scripts
 
-The project repository contains a number of Python scripts which serve various purposes. All scripts are located in the `/scripts` directory. The majority of them use `argparse`, and will print a help message when the `-h` flag is used. Many of the scripts rely on the `.env` file in the root of the repository in order to execute as intended.
+The project repository contains several Python scripts which serve various purposes. All scripts are located in the `/scripts` directory. The majority of them use `argparse`, and will print a help message when the `-h` flag is used. Many of the scripts rely on the `.env` file in the root of the repository in order to execute as intended.
 
 ## Admin
 
@@ -42,7 +42,7 @@ Please note that, again, this is the application's one and only database, and an
 
 ## Environment Variables
 
-This script, `env.py`, is not meant to be used by itself. It reads contents of the `.env` file in the root of the project repository and provides the data in a more Python-friendly format. The script is used by other scripts, specifically the ones that need access to sensitive environment variables such as the database URL.
+This script, `env.py`, is not meant to be used by itself. It reads the contents of the `.env` file in the root of the project repository and provides the data in a more Python-friendly format. The script is used by other scripts, specifically the ones that need access to sensitive environment variables such as the database URL.
 
 ## Test
 

@@ -51,19 +51,19 @@ The main part of the project, contained within the `src` directory, is organized
 
 `db.ts` provides a wrapper around [the mysql NPM package](https://www.npmjs.com/package/mysql), making it easier to execute queries asynchronously.
 
-`emailer.ts` contains functions which allow for sending emails. The `/src/emails` directory houses a series of text and HTML files which contain the content that will be sent to users via email. For each email that needs to be sent, we send both the text and HTML versions of the email so that if the user's email client supports HTML (which it should, given that this is the 21st century), that is what will be displayed. If HTML is not supported, it will simply display the text version of the email. The `sendFormattedEmail` function supports the use of named placeholders within the email body. See the function documentation for further details.
+`emailer.ts` contains functions that allow for sending emails. The `/src/emails` directory houses a series of text and HTML files that contain the content that will be sent to users via email. For each email that needs to be sent, we send both the text and HTML versions of the email so that if the user's email client supports HTML (which it should, given that this is the 21st century), that is what will be displayed. If HTML is not supported, it will simply display the text version of the email. The `sendFormattedEmail` function supports the use of named placeholders within the email body. See the function documentation for further details.
 
-`asyncCatch.ts` exports a function which wraps an asynchronous function in a try/catch block. It is imperative that developers use this function when configuring routing, as Express does not have a way of catching errors that occur within asynchronous routes.
+`asyncCatch.ts` exports a function that wraps an asynchronous function in a try/catch block. It is imperative that developers use this function when configuring routing, as Express does not have a way of catching errors that occur within asynchronous routes.
 
 `config.ts` contains default values for the `Meta` database table.
 
-`proxy.ts` exports a function which will essentially reroute a request to a different URL.
+`proxy.ts` exports a function that will essentially reroute a request to a different URL.
 
 `helpers.ts` contains useful helper functions that can be used in the view layer.
 
 ### View Layer
 
-The view layer is kept within the `/src/views` and `/src/static` directories. The views directory houses all HTML files used in the view layer. There are two subdirectories as well, both of which are necessary for our view engine, [Express Handlebars](https://www.npmjs.com/package/express-handlebars). `/src/views/layouts` has the one and only layout. Our view engine is configured to use `/src/views/layouts/default.html` as a template, and render the specified view (one of the HTML files within the views directory) in place of `{{{body}}}`. `/src/views/partials` contains partial templates, of which we have only the one we use for each page of the admin control panel. For information on the syntax Express Handlebars supports, see [the NPM page](https://www.npmjs.com/package/express-handlebars) or [the GitHub repo](https://github.com/express-handlebars/express-handlebars). The `/src/static` directory is served statically. As an example, `/src/static/css/main.css` is served as `/css/main.css`, and in a view you could link it like so:
+The view layer is kept within the `/src/views` and `/src/static` directories. The views directory houses all HTML files used in the view layer. There are two subdirectories as well, both of which are necessary for our view engine, [Express Handlebars](https://www.npmjs.com/package/express-handlebars). `/src/views/layouts` has the one and only layout. Our view engine is configured to use `/src/views/layouts/default.html` as a template, and render the specified view (one of the HTML files within the views directory) in place of `{{{body}}}`. `/src/views/partials` contains partial templates, of which we have only the one we use for each page of the admin control panel. For information on the syntax Express Handlebars supports, see [the NPM page](https://www.npmjs.com/package/express-handlebars) or [the GitHub repo](https://github.com/express-handlebars/express-handlebars). The `/src/static` directory is served statically. As an example, `/src/static/css/main.css` is served as `/css/main.css`, and in a view, you could link it like so:
 
 ```html
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -126,7 +126,7 @@ Developers are strongly encouraged to look at other files in the routing directo
 
 ### Service Layer
 
-The service layer deals with interaction with the database, and is kept within the `/src/services` directory. Each TypeScript file in this directory loosely corresponds to one table in the database. Each file contains a class which inherits from the `BaseService` class in `/src/services/util.ts`. The format for a service is as follows:
+The service layer deals with interaction with the database and is kept within the `/src/services` directory. Each TypeScript file in this directory loosely corresponds to one table in the database. Each file contains a class that inherits from the `BaseService` class in `/src/services/util.ts`. The format for a service is as follows:
 
 ```ts
 /**
@@ -163,7 +163,7 @@ export class ServiceNameService extends BaseService {
 
 We encourage developers to use [TypeDoc](https://typedoc.org/) documentation syntax to document new classes, functions/methods, interfaces, etc. See [the repos page](/dev/repos) for more information on TypeDoc.
 
-Any new services must be added in `/src/services.ts`. This includes importing the new service class, defining it as a readonly property of the `DatabaseManager` class, and initializing it in the constructor. When adding new services, developers should _always_ write tests for the new services to ensure everything executes as intended.
+Any new services must be added in `/src/services.ts`. This includes importing the new service class, defining it as a read-only property of the `DatabaseManager` class, and initializing it in the constructor. When adding new services, developers should _always_ write tests for the new services to ensure everything executes as intended.
 
 Developers are strongly encouraged to look at other files in the services directory in order to best follow the development patterns we have established in the application.
 

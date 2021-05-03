@@ -8,11 +8,11 @@ The project is hosted using [Heroku Teams](https://devcenter.heroku.com/articles
 
 ## The Project
 
-The project is called `luther-navigator`, and can be accessed at [luther-navigator.herokuapp.com](https://luther-navigator.herokuapp.com/), although users will end up using the custom URL [luthernavigator.com](https://www.luthernavigator.com/).
+The project is called `luther-navigator` and can be accessed at [luther-navigator.herokuapp.com](https://luther-navigator.herokuapp.com/), although users will end up using the custom URL [luthernavigator.com](https://www.luthernavigator.com/).
 
 ### Dynos
 
-We are using the $7.00 dyno tier, meaning that the website is kept up even when web traffic is minimal and SSL is managed automatically. We do not expect this to need to change in the forseeable future.
+We are using the $7.00 dyno tier, meaning that the website is kept up even when web traffic is minimal and SSL is managed automatically. We do not expect this to need to change in the foreseeable future.
 
 ### Addons
 
