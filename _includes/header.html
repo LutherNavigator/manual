@@ -1,0 +1,57 @@
+<header class="header">
+  <div class="header-inner">
+    <a class="banner" href="/manual/">
+      <img
+        src="/manual/assets/compass_b.png"
+        width="30"
+        height="30"
+        class="d-inline-block align-top spin"
+        alt=""
+      />
+      Luther Navigator Manual
+    </a>
+  </div>
+</header>
+
+<style>
+  /* spinning logos */
+  @keyframes spinning {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spin {
+    animation-name: spinning;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  header.header {
+    background-color: rgba(127, 127, 127, 0.1);
+    padding: 16px;
+  }
+
+  header.header a:hover {
+    text-decoration: none;
+  }
+
+  .header-inner {
+    display: flex;
+    flex-grow: 0;
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .banner img {
+    margin-right: 8px;
+  }
+</style>
