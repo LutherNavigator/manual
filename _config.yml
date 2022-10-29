@@ -22,7 +22,7 @@ title: LutherNavigator Manual
 email: wkhallen@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Manual for LutherNavigator
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/manual" # the subpath of your site, e.g. /blog
 url: "https://luthernavigator.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
 github_username: LutherNavigator
