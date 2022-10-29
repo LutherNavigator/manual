@@ -5,3 +5,6 @@ _site
 vendor
 
 .vscode
+*.DS_Store
+.env
+todo.txt
