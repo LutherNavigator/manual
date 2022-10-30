@@ -41,18 +41,11 @@ $ heroku local web
 
 ## Error Pages
 
-The [error pages repository](https://github.com/LutherNavigator/error-pages) contains the code for the pages that will be displayed in the event of an error or site maintenance. The Heroku project is configured to display the page hosted at [`/error`](https://luther-navigator-error-pages.herokuapp.com/error) of the error page deployment when an uncaught error occurs in the main application. Heroku has an option to enable site maintenance, at which point it will display the page hosted at [`/maintenance`](https://luther-navigator-error-pages.herokuapp.com/maintenance).
+The [error pages repository](https://github.com/LutherNavigator/error-pages) contains the code for the pages that will be displayed in the event of an error or site maintenance. The Heroku project is configured to display the page hosted at [`luthernavigator.github.io/error-pages/error.html`](https://luthernavigator.github.io/error-pages/error.html) when an uncaught error occurs in the main application. Heroku has an option to enable site maintenance, at which point it will display the page hosted at [`luthernavigator.github.io/error-pages/maintenance.html`](https://luthernavigator.github.io/error-pages/maintenance.html).
 
 ### Extending the Error Pages
 
-We do not expect developers will need to extend this part of the application, but we will explain the architecture of this project regardless. `index.js` contains the logic that runs the application. It uses no external packages. We have designed it to run without any packages so that it can be cloned and start on Heroku as quickly as possible. For any requested path, the application will first check the `/pages` directory to see if an HTML file with the same name as the path exists. If it does, the HTML content will be sent. If not, the application will then check if the `/static` directory contains the requested resource. If it does, the resource will be sent. In the event of a 404, an empty response will be returned.
-
-Changes can be made to the existing HTML pages and CSS styling. In order to add a new page, a developer can simply add a new HTML file in `/pages`, and the new page will be available at `/HTMLFileNameWithoutExtension`. As an example, an HTML file at `/pages/hello.html` would be available at `/hello`. CSS and JavaScript files can be placed in the `/static` directory and referenced in HTML at `/CSSOrJSFileName`. For example, an HTML file in `/pages` could link a CSS file at `/static/style.css` and JavaScript file at `/static/script.js` with:
-
-```html
-<link rel="stylesheet" type="text/css" href="/style.css" />
-<script type="text/javascript" src="/script.js"></script>
-```
+We do not expect developers will need to extend this part of the application, but we will explain the architecture of this project regardless. In the root of the repository you will find `error.html` and `maintenance.html`, which contain the markup that is displayed when errors or site maintenance occur. Changes can be made to these HTML pages and CSS styling (currently in `/main.css`). In order to add a new page, a developer can simply add a new HTML file in the root or any subdirectory, and the new page will be available on the next build.
 
 ## Docs
 
